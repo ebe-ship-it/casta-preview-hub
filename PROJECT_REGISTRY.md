@@ -40,3 +40,7 @@ A permanent index of website previews created with ChatGPT and hosted in this re
 - Original lightweight experiments: pointer-follow button, accessible tap flip card, frosted glass, text highlight reveal, tap card stack.
 - No claims of true optical refraction or production-ready 3D models.
 - Preview: https://casta-preview-hub.netlify.app/motion-lab/
+
+## Shared design playbook
+- [CASTA DESIGN INTELLIGENCE](skills/CASTA_DESIGN_INTELLIGENCE.md): researched reference sources, 30 original motion patterns, typography and art-direction principles, accessibility, performance rules, and deployment workflow.
+- Use this playbook for new Casta Studio website builds; continue to research individual references and verify live behavior before implementation.
