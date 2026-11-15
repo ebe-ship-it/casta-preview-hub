@@ -6,6 +6,7 @@ A permanent index of website previews created with ChatGPT and hosted in this re
 
 | Project | Purpose | Preview | Source folder | Status |
 |---|---|---|---|---|
+| NOCTURNE | Fictional perfume concept with actual Three.js WebGL bottle geometry, scroll-directed camera poses, glass materials, and GSAP reveals. | https://casta-preview-hub.pages.dev/nocturne/ | `nocturne/` | Committed; live deployment and mobile testing pending |
 | CASTA Gallery | Cinematic portfolio homepage showing the studio's website experiments. | https://casta-preview-hub.pages.dev/ | `/` | Committed; Cloudflare deployment to verify |
 | CASTA Motion Lab | Interactive playground with magnetic button, flip card, frosted glass, typography reveal, and card stack. | https://casta-preview-hub.pages.dev/motion-lab/ | `motion-lab/` | Committed; awaiting Netlify verification |
 
@@ -36,3 +37,9 @@ A permanent index of website previews created with ChatGPT and hosted in this re
 - [CASTA DESIGN INTELLIGENCE](skills/CASTA_DESIGN_INTELLIGENCE.md): researched reference sources, 30 original motion patterns, typography and art-direction principles, accessibility, performance rules, and deployment workflow.
 - Use this playbook for new Casta Studio website builds; continue to research individual references and verify live behavior before implementation.
 
+
+### NOCTURNE
+- Original fictional perfume website. The WebGL bottle is procedural geometry, not a professional photorealistic GLB asset.
+- Three.js scene and real perspective camera; GSAP ScrollTrigger scroll-driven camera poses; Lenis optional smoothing; mobile DPR capped.
+- CDN modules and scripts require network access. No checkout or real product claims.
+- QA pending: Cloudflare deployment, real Android performance, WebGL support and visual review.
