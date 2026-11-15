@@ -7,7 +7,8 @@ A permanent index of website previews created with ChatGPT and hosted in this re
 | Project | Purpose | Preview | Source folder | Status |
 |---|---|---|---|---|
 | ELSEWHERE | Cinematic travel editorial experience with immersive landscape imagery, animated typography, scroll storytelling, and interactive destination sections. | https://casta-preview-hub.netlify.app/elsewhere/ | `elsewhere/` | Deployed; visual and mobile quality still subject to testing |
-| CASTA Preview Hub | Home for collecting website previews, each with its own path. | https://casta-preview-hub.netlify.app/ | `/` | Deployed |
+| CASTA Gallery | Cinematic portfolio homepage showing the studio's website experiments. | https://casta-preview-hub.netlify.app/ | `/` | Committed; awaiting Netlify verification |
+| CASTA Motion Lab | Interactive playground with magnetic button, flip card, frosted glass, typography reveal, and card stack. | https://casta-preview-hub.netlify.app/motion-lab/ | `motion-lab/` | Committed; awaiting Netlify verification |
 
 ## How to use this notebook
 - Add one row whenever a new website is created.
@@ -30,3 +31,12 @@ A permanent index of website previews created with ChatGPT and hosted in this re
 - GitHub: https://github.com/ebe-ship-it/casta-preview-hub
 - Netlify: https://casta-preview-hub.netlify.app/
 - Rule: each new static website goes into its own named subfolder, so existing previews remain accessible.
+
+### CASTA Gallery redesign
+- Replaced the basic homepage with a cinematic editorial gallery.
+- Features: landscape hero, motion reveals, ELSEWHERE project card, links to Motion Lab and registry, responsive layout.
+
+### CASTA Motion Lab
+- Original lightweight experiments: pointer-follow button, accessible tap flip card, frosted glass, text highlight reveal, tap card stack.
+- No claims of true optical refraction or production-ready 3D models.
+- Preview: https://casta-preview-hub.netlify.app/motion-lab/
