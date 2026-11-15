@@ -6,6 +6,7 @@ A permanent index of website previews created with ChatGPT and hosted in this re
 
 | Project | Purpose | Preview | Source folder | Status |
 |---|---|---|---|---|
+| EMBER & EARTH | Fictional cinematic open-fire restaurant concept with immersive photography, editorial type, responsive gallery, menu detail dialogs, and scroll reveals. | https://casta-preview-hub.netlify.app/ember-earth/ | `ember-earth/` | Committed; awaiting Netlify verification |
 | ELSEWHERE | Cinematic travel editorial experience with immersive landscape imagery, animated typography, scroll storytelling, and interactive destination sections. | https://casta-preview-hub.netlify.app/elsewhere/ | `elsewhere/` | Deployed; visual and mobile quality still subject to testing |
 | CASTA Gallery | Cinematic portfolio homepage showing the studio's website experiments. | https://casta-preview-hub.netlify.app/ | `/` | Committed; awaiting Netlify verification |
 | CASTA Motion Lab | Interactive playground with magnetic button, flip card, frosted glass, typography reveal, and card stack. | https://casta-preview-hub.netlify.app/motion-lab/ | `motion-lab/` | Committed; awaiting Netlify verification |
@@ -44,3 +45,12 @@ A permanent index of website previews created with ChatGPT and hosted in this re
 ## Shared design playbook
 - [CASTA DESIGN INTELLIGENCE](skills/CASTA_DESIGN_INTELLIGENCE.md): researched reference sources, 30 original motion patterns, typography and art-direction principles, accessibility, performance rules, and deployment workflow.
 - Use this playbook for new Casta Studio website builds; continue to research individual references and verify live behavior before implementation.
+
+### EMBER & EARTH
+- Concept: fictional, original premium restaurant brand inspired by open-fire cooking, seasonal plates and intimate dining.
+- Experience: curtain hero entrance, staggered oversized type, scroll-progress line, glass navigation, parallax hero, animated marquee, reveal and clip transitions, tap-friendly dish dialogs, horizontally swipeable gallery, full-screen mobile menu, reduced-motion fallbacks.
+- Photography: remotely loaded Unsplash imagery (requires network; verify image availability and license before commercial use). A separate AI-generated hero study was produced but not embedded in the deployment because binary asset upload was unavailable.
+- Reservation status: concept only; no booking backend or fabricated restaurant location, pricing or reviews.
+- Research: https://restaurantdesignguy.com/project/nero-vela/ ; https://www.signalstudios.uk/ ; https://websiteunpacked.com/restaurant-website-design
+- Preview: https://casta-preview-hub.netlify.app/ember-earth/
+- QA pending: confirm Netlify deployment, images, performance and real-device responsive behavior.
