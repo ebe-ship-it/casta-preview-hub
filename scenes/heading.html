@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- MengTo/threeui @ 68802d5428071ada5c20db8094b1649e6bb770ed (MIT). -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>New Grainient Collection Added — motion</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden}
+  body{-webkit-font-smoothing:antialiased}
+  canvas{display:block;width:100vw;height:100vh}
+</style>
+<link rel="stylesheet" href="/src/fonts.css"></head>
+<body>
+<canvas id="stage"></canvas>
+<script type="module">
+(function(){
+'use strict';
+
+/* ------------------------------------------------------------------ *
+ * Design frame: 2962 x 2160.  Every length below is in that space.
+ * ------------------------------------------------------------------ */
+var DW = 2962, DH = 2160, DASP = DW / DH;
+
+var RING = {
+  cx: 1484, cy: 1108,   /* projected ring centre                        */
+  a: 712,               /* projected semi-major axis (px)               */
+  ratio: 0.492,         /* semi-minor / semi-major -> plane tilt 60.5deg */
+  axis: 25.5,           /* screen angle of the major axis (deg, y down)  */
+  n: 12,                /* tiles                                         */
+  tile: 346,            /* tile side in ring units (R = a)               */
+  radius: 0.22,         /* corner radius as a fraction of the side       */
+  dist: 13,             /* camera distance in ring radii                 */
+  phase: 93             /* psi of tile 0 at t = 0 (deg)                  */
+};
+
+var DUR = 15.015;       /* one full revolution = a seamless loop */
+
+var HEAD = [
+  { s:'From the',    top:930,  w:1370, fill:'#d0d0d0' },
+  { s:'kitchen', top:1114, w:1775, fill:'#ffffff' }
+];
+var CAP = 142;          /* headline cap height */
+var SMALL = 22;         /* small-label cap height */
+
+var SANS = '"Oleo Script",serif';
+
+/* ------------------------------------------------------------------ *
+ * Deterministic noise
+ * ------------------------------------------------------------------ */
+function rng(seed){
+  var s = seed >>> 0;
+  return function(){
+    s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0;
+    return s / 4294967296;
+  };
+}
+
+function mkc(w,h){
+  var c = document.createElement('canvas');
+  c.width = w; c.height = h;
+  return c;
+}
+
+/* ------------------------------------------------------------------ *
+ * Tile artwork — eleven grainy gradient "wallpapers"
+ * ------------------------------------------------------------------ */
+var TS = 320;
+function roundRectPath(x,w,h,r){
+  x.beginPath();
+  x.moveTo(-w/2+r,-h/2);
+  x.lineTo(w/2-r,-h/2); x.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);
+  x.lineTo(w/2,h/2-r);  x.quadraticCurveTo(w/2,h/2,w/2-r,h/2);
+  x.lineTo(-w/2+r,h/2); x.quadraticCurveTo(-w/2,h/2,-w/2,h/2-r);
+  x.lineTo(-w/2,-h/2+r);x.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2);
+  x.closePath();
+}
+const tiles = ['/photos/seafood-small.webp','/photos/drinks.webp','/photos/calamari.webp','/photos/breakfast.webp','/photos/table-small.webp','/photos/garden-small.webp'];
+var TEX = {front: [], back: []};
+for (const url of tiles) {
+  const face = mkc(TS, TS), back = mkc(TS, TS);
+  TEX.front.push(face); TEX.back.push(back);
+  const photo = new Image();
+  photo.onload = () => {
+    const side = Math.min(photo.width, photo.height);
+    for (const surface of [face, back]) {
+      const ctx = surface.getContext('2d');
+      ctx.drawImage(photo,(photo.width-side)/2,(photo.height-side)/2,side,side,0,0,TS,TS);
+      if (surface === back) {ctx.fillStyle='rgba(43,27,20,.5)';ctx.fillRect(0,0,TS,TS);}
+    }
+  };
+  photo.src = url;
+}
+
+/* ------------------------------------------------------------------ *
+ * Ring geometry.  u / v span the ring plane; z points at the viewer.
+ * ------------------------------------------------------------------ */
+var ax = RING.axis * Math.PI/180, cf = RING.ratio, sf = Math.sqrt(1-cf*cf);
+var U = [Math.cos(ax), Math.sin(ax), 0];
+var V = [-Math.sin(ax)*cf, Math.cos(ax)*cf, sf];
+var AXIS = [                                    /* U x V — the ring's own axis */
+  U[1]*V[2]-U[2]*V[1],
+  U[2]*V[0]-U[0]*V[2],
+  U[0]*V[1]-U[1]*V[0]
+];
+
+/* ------------------------------------------------------------------ *
+ * Canvas + layout
+ * ------------------------------------------------------------------ */
+var cv = document.getElementById('stage'), ctx = cv.getContext('2d');
+var W = 0, H = 0, K = 1, OX = 0, OY = 0, headLayer = null, labelLayer = null;
+
+function d2sx(x){ return OX + x*K; }
+function d2sy(y){ return OY + y*K; }
+
+/* draw text whose inked box matches a target: capHeight and (optional) width */
+function fitText(x,str,font,weight,cap,cx,capTop,targetW,color,align){
+  var probe = 100;
+  x.font = weight+' '+probe+'px '+font;
+  var m = x.measureText('H');
+  var capUnit = (m.actualBoundingBoxAscent||71) / probe;
+  var size = cap / capUnit;
+  x.font = weight+' '+size+'px '+font;
+  var mm = x.measureText(str);
+  var inkW = (mm.actualBoundingBoxRight||mm.width) + (mm.actualBoundingBoxLeft||0);
+  var sx = targetW ? targetW / inkW : 1;
+  x.save();
+  x.fillStyle = color;
+  x.textBaseline = 'alphabetic';
+  x.translate(cx, capTop + cap);
+  x.scale(sx,1);
+  x.textAlign = align || 'center';
+  var left = (mm.actualBoundingBoxLeft||0);
+  x.fillText(str, align === 'left' ? left : 0, 0);
+  x.restore();
+  return inkW*sx;
+}
+
+function buildHead(){
+  headLayer = mkc(Math.max(1,W), Math.max(1,H));
+  var x = headLayer.getContext('2d');
+  for (var i=0;i<HEAD.length;i++){
+    var h = HEAD[i];
+    fitText(x, h.s, SANS, '700', CAP*K, d2sx(1481), d2sy(h.top), h.w*K, h.fill);
+  }
+}
+
+function buildLabels(){ labelLayer = mkc(1,1); }
+
+function resize(){
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  W = Math.round(window.innerWidth * dpr);
+  H = Math.round(window.innerHeight * dpr);
+  cv.width = W; cv.height = H;
+  var S = Math.min(W, H*DASP);           /* effective design width */
+  K = S / DW;
+  OX = (W - DW*K)/2;
+  OY = (H - DH*K)/2;
+  buildHead();
+  buildLabels();
+}
+
+/* ------------------------------------------------------------------ *
+ * Frame
+ * ------------------------------------------------------------------ */
+function project(p){
+  var k = RING.a*K*RING.dist / (RING.dist - p[2]);
+  return [ d2sx(RING.cx) + k*p[0], d2sy(RING.cy) + k*p[1], k ];
+}
+
+function drawTile(i, psi){
+  var c = Math.cos(psi), s = Math.sin(psi);
+  var C  = [c*U[0]+s*V[0], c*U[1]+s*V[1], c*U[2]+s*V[2]];      /* centre, |C| = 1 */
+  var T  = [-s*U[0]+c*V[0], -s*U[1]+c*V[1], -s*U[2]+c*V[2]];   /* tangent          */
+  var h  = RING.tile/(2*RING.a);                               /* half side, ring units */
+  var p0 = project(C);
+  var pT = project([C[0]+T[0]*h, C[1]+T[1]*h, C[2]+T[2]*h]);
+  var pA = project([C[0]+AXIS[0]*h, C[1]+AXIS[1]*h, C[2]+AXIS[2]*h]);
+  var ex = pT[0]-p0[0], ey = pT[1]-p0[1];
+  var fx = pA[0]-p0[0], fy = pA[1]-p0[1];
+  if (Math.abs(ex*fy - ey*fx) < 0.4) return;                   /* edge on */
+
+  var facing = C[2] > 0;                                       /* radial normal ~ C */
+  var img = (facing ? TEX.front : TEX.back)[i % TEX.front.length];
+  ctx.save();
+  ctx.setTransform(ex*2/TS, ey*2/TS, fx*2/TS, fy*2/TS, p0[0], p0[1]);
+  roundRectPath(ctx, TS, TS, TS*RING.radius);
+  ctx.clip();
+  ctx.drawImage(img, -TS/2, -TS/2, TS, TS);
+  ctx.restore();
+  ctx.setTransform(1,0,0,1,0,0);
+}
+
+function render(t){
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.fillStyle = '#2b1b14';
+  ctx.fillRect(0,0,W,H);
+  ctx.imageSmoothingQuality = 'high';
+
+  var spin = (t/DUR)*Math.PI*2;
+  var list = [], i;
+  for (i=0;i<RING.n;i++){
+    var psi = RING.phase*Math.PI/180 - i*2*Math.PI/RING.n + spin;
+    var c = Math.cos(psi), s = Math.sin(psi);
+    list.push({ i:i, psi:psi, z: c*U[2] + s*V[2] });
+  }
+  list.sort(function(a,b){ return a.z - b.z; });
+
+  var drawnText = false;
+  for (i=0;i<list.length;i++){
+    if (!drawnText && list[i].z > 0){ ctx.drawImage(headLayer,0,0); drawnText = true; }
+    drawTile(list[i].i, list[i].psi);
+  }
+  if (!drawnText) ctx.drawImage(headLayer,0,0);
+  ctx.drawImage(labelLayer,0,0);
+}
+
+/* ------------------------------------------------------------------ *
+ * Clock + public controls
+ * ------------------------------------------------------------------ */
+var t0 = performance.now(), tNow = 0, playing = true;
+
+function frame(now){
+  if (playing){
+    tNow = ((now - t0)/1000) % DUR;
+    render(tNow);
+  }
+  requestAnimationFrame(frame);
+}
+
+window.addEventListener('resize', function(){ resize(); render(tNow); });
+resize();
+requestAnimationFrame(frame);
+
+window.__DUR = DUR;
+window.__seek = function(t){
+  tNow = ((t % DUR) + DUR) % DUR;
+  playing = false;
+  render(tNow);
+};
+window.__play = function(){ t0 = performance.now() - tNow*1000; playing = true; };
+window.__pause = function(){ playing = false; };
+window.__time = function(){ return tNow; };
+document.fonts.load('bold 24px "Oleo Script"').then(resize);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+.section-element--newsletter-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(24px, 4.5cqw, 90px) clamp(12px, 2cqh, 24px);
+}
+
+.newsletter-footer__row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: clamp(18px, 4.5cqh, 32px);
+}
+
+.newsletter-footer__brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-right: auto;
+}
+
+.newsletter-footer__mark {
+  display: grid;
+  flex: none;
+  width: clamp(32px, 4.4cqw, 56px);
+  height: clamp(32px, 4.4cqw, 56px);
+  margin-right: clamp(16px, 2.5cqw, 32px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24%;
+  place-items: center;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.025));
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+.newsletter-footer__mark span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(9px, 1.1cqw, 14px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.newsletter-footer__brand p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: clamp(10px, 1.55cqw, 20px);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.newsletter-footer__form {
+  position: relative;
+  flex: 0 1 400px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: rgba(23, 23, 23, 0.3);
+}
+
+.newsletter-footer__form::before {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.02);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(175deg, #000, transparent 50%);
+  mask-image: linear-gradient(175deg, #000, transparent 50%);
+}
+
+.newsletter-footer__form > svg {
+  position: absolute;
+  z-index: 1;
+  top: 18px;
+  left: 22px;
+  fill: rgba(255, 255, 255, 0.62);
+  stroke: rgba(255, 255, 255, 0.62);
+  stroke-width: 1.5;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+
+.newsletter-footer__wordmark {
+  width: 100%;
+  color: rgba(248, 248, 248, 0.055);
+  font-size: clamp(50px, 12.7cqw, 164px);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 0.9;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.newsletter-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px clamp(12px, 1.8cqw, 24px);
+  margin-top: clamp(14px, 3.9cqh, 28px);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: clamp(8px, 1.1cqw, 14px);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.newsletter-footer__legal a {
+  color: rgba(255, 255, 255, 0.64);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.newsletter-footer__legal a:hover {
+  color: #fff;
+}

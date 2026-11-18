@@ -1,0 +1,24 @@
+{
+  "name": "hug-a-mug-cafe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:production": "node tests/production.mjs"
+  },
+  "dependencies": {
+    "@fontsource/kalam": "^5.2.0",
+    "@fontsource/oleo-script": "^5.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "0.149.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1",
+    "@axe-core/playwright": "^4.11.0",
+    "playwright": "^1.55.0",
+    "lighthouse": "^13.0.0"
+  }
+}
