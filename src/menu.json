@@ -1,0 +1,1083 @@
+[
+  {
+    "title": "Breakfast & brunch",
+    "groups": [
+      [
+        "Breakfast & brunch",
+        [
+          [
+            "Signature Breakfast",
+            26000,
+            "Sausage, beef bacon, tomato, potatoes, beans, toast, mushrooms & eggs your way."
+          ],
+          [
+            "Big Day Breakfast",
+            26000,
+            "Pancakes, sausage, beef bacon, avocado, beans, roasted potatoes, syrup & eggs."
+          ],
+          [
+            "Chagga Breakfast",
+            25000,
+            "Banana-and-meat soup from Kilimanjaro, served with soft chapati."
+          ],
+          [
+            "Mchemsho - Tilapia / Half Chicken",
+            23000,
+            "Swahili favourite simmered with green banana, potato, veg & lemon."
+          ],
+          [
+            "Classic Pancakes",
+            20000,
+            "Fluffy stack, seasonal fruit and warm syrup."
+          ]
+        ]
+      ],
+      [
+        "Toasts & waffles",
+        [
+          [
+            "Classic French Toast",
+            20000,
+            "Brioche toasted golden with fresh fruit, honey & cream."
+          ],
+          [
+            "Banana & Nutella Waffles",
+            20000,
+            "Crisp waffles loaded with warm Nutella and banana."
+          ],
+          [
+            "Chilli Honey Halloumi Toast",
+            24000,
+            "Pan-fried halloumi, avocado, cherry tomato & chilli honey."
+          ],
+          [
+            "Egg & Bacon Avocado Toast",
+            20000,
+            "Sunny eggs, crispy beef bacon, cheddar & avocado on brioche."
+          ],
+          [
+            "Parmesan & Garlic Mushroom Toast",
+            25000,
+            "Parmesan toast, rosemary-garlic mushrooms, avocado & chilli jam."
+          ]
+        ]
+      ],
+      [
+        "Customise breakfast",
+        [
+          [
+            "Two Eggs, Any Style",
+            8000,
+            "Fried, scrambled, boiled or poached."
+          ],
+          [
+            "Beef Bacon",
+            8000,
+            ""
+          ],
+          [
+            "Sausage - Chicken or Beef (1)",
+            4000,
+            ""
+          ],
+          [
+            "Avocado",
+            4000,
+            ""
+          ],
+          [
+            "Baked Beans",
+            4000,
+            ""
+          ],
+          [
+            "Halloumi",
+            6000,
+            ""
+          ]
+        ]
+      ],
+      [
+        "Omelettes",
+        [
+          [
+            "Plain Omelette",
+            12000,
+            ""
+          ],
+          [
+            "Cheese Omelette",
+            15000,
+            ""
+          ],
+          [
+            "Spanish Omelette",
+            16000,
+            ""
+          ],
+          [
+            "Zege",
+            16000,
+            "A Bongo staple - simple but filling."
+          ],
+          [
+            "Sausage Omelette",
+            15000,
+            "Beef or chicken sausage."
+          ],
+          [
+            "Masala Omelette",
+            14000,
+            ""
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Light bites & favourites",
+    "groups": [
+      [
+        "Starters",
+        [
+          [
+            "Signature Wings",
+            22000,
+            "Crispy battered wings in a glossy sweet chilli glaze."
+          ],
+          [
+            "Signature Korean Prawns",
+            25000,
+            "Crisp prawns in sweet-spicy Korean sauce, sesame & spring onion."
+          ],
+          [
+            "Cajun Chicken Strips",
+            20000,
+            "Cajun-spiced grilled chicken, mint mayo & cabbage salad."
+          ],
+          [
+            "Fish Cake",
+            19000,
+            "Fresh fish & herb patty with tartar and guacamole."
+          ],
+          [
+            "Calamari Fritti",
+            22000,
+            "Crisp calamari rings, mango salad & tartar."
+          ],
+          [
+            "Fried Chicken Fingers",
+            22000,
+            "Buttermilk chicken, chips, coleslaw & BBQ mayo."
+          ],
+          [
+            "Paneer Tikka Skewers",
+            20000,
+            "Chargrilled paneer - smoky and cheesy."
+          ]
+        ]
+      ],
+      [
+        "Soups",
+        [
+          [
+            "Coconut Pumpkin",
+            16000,
+            "Pumpkin, coconut milk & warm spices, toasted seeds."
+          ],
+          [
+            "Chicken - Clear",
+            15000,
+            ""
+          ],
+          [
+            "Chicken - Cream",
+            16000,
+            ""
+          ],
+          [
+            "Vegetable - Clear",
+            13000,
+            ""
+          ],
+          [
+            "Vegetable - Cream",
+            14000,
+            ""
+          ]
+        ]
+      ],
+      [
+        "Salads",
+        [
+          [
+            "Signature BLT Protein Salad",
+            25000,
+            "Grilled chicken, beef bacon, feta & garlic yoghurt dressing."
+          ],
+          [
+            "Avocado Chicken Salad",
+            23000,
+            "Grilled chicken, avocado, sweetcorn & house pesto dressing."
+          ],
+          [
+            "Thai Chicken Salad",
+            22000,
+            "Grilled chicken, peppers, herbs, peanuts & zesty Thai dressing."
+          ],
+          [
+            "Mediterranean Veg Salad",
+            18000,
+            "Greens, cashews, croutons & apple-cider vinaigrette. + chicken 5,000."
+          ],
+          [
+            "Watermelon & Feta Salad",
+            19000,
+            "Watermelon, feta, mint & citrus dressing."
+          ]
+        ]
+      ],
+      [
+        "Wraps",
+        [
+          [
+            "Signature Crispy Chicken Wrap",
+            23000,
+            "Crispy chicken, cheese, caramelised onion, coleslaw & dynamite sauce."
+          ],
+          [
+            "Tandoori Chicken Wrap",
+            22000,
+            "Grilled tandoori chicken, salad, cheese & mint mayo."
+          ],
+          [
+            "Paneer Wrap",
+            20000,
+            "Paneer, kachumbari & mint mayo."
+          ],
+          [
+            "Avo Halloumi Wrap",
+            22000,
+            "Grilled halloumi, avocado, veg & sweet-chilli mayo."
+          ],
+          [
+            "Burrito",
+            24000,
+            "Beans, pulled beef, avocado, salsa & BBQ mayo."
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Comfort classics",
+    "groups": [
+      [
+        "Burgers",
+        [
+          [
+            "Signature Double Cheeseburger",
+            26000,
+            "Two smashed patties, fried egg, cheese, pickles & honey-mustard mayo."
+          ],
+          [
+            "Signature Mango Slaw Chicken",
+            25000,
+            "Fried chicken, sweet mango slaw, creamy mayo & a touch of heat."
+          ],
+          [
+            "Texas Beef Burger",
+            26000,
+            "Beef patty, cheese, mushrooms, caramelised onion & chilli-tomato jam."
+          ],
+          [
+            "Fire Bird Chicken Burger",
+            24000,
+            "Crispy chicken thigh, jalapeño, cheese & sweet chilli mayo."
+          ],
+          [
+            "The Garden Classic",
+            23000,
+            "Grilled paneer & veg stack, lettuce & basil pesto."
+          ]
+        ]
+      ],
+      [
+        "Sandwiches",
+        [
+          [
+            "Signature Southern Fried Chicken",
+            25000,
+            "Crispy chicken, coleslaw, cheese & tomato-chilli jam on brioche."
+          ],
+          [
+            "Chicken Club",
+            21000,
+            "Double-decker with chicken, omelette, cheese & mayo."
+          ],
+          [
+            "Pulled Beef",
+            23000,
+            "Pulled beef, salsa, cheese & BBQ mayo, toasted."
+          ],
+          [
+            "Fish Sandwich",
+            25000,
+            "Grilled fish, lettuce, tomato & tartar."
+          ]
+        ]
+      ],
+      [
+        "Pasta",
+        [
+          [
+            "Signature Spaghetti Bolognaise",
+            26000,
+            "Rich beef ragù finished with parmesan."
+          ],
+          [
+            "Alfredo Penne - Veg",
+            23000,
+            "Creamy white sauce, parmesan & herbs. Garlic bread."
+          ],
+          [
+            "Alfredo Penne - Chicken",
+            25000,
+            ""
+          ],
+          [
+            "Arrabbiata Penne - Veg",
+            22000,
+            "Bold tomato sauce, garlic, basil & chilli. Garlic bread."
+          ],
+          [
+            "Arrabbiata Penne - Chicken",
+            24000,
+            ""
+          ]
+        ]
+      ],
+      [
+        "Wok & rice bowls",
+        [
+          [
+            "Signature Beef & Onion Stir Fry",
+            26000,
+            "Beef, onions, peppers & soy-garlic-ginger glaze."
+          ],
+          [
+            "Kung Pao Chicken",
+            25000,
+            "Chicken, peanuts, peppers & fiery-sweet sauce."
+          ],
+          [
+            "Zesty Ginger Fish",
+            25000,
+            "Spiced fish in a bright ginger sauce."
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Fire, spice & sharing",
+    "groups": [
+      [
+        "Afro-asian curries",
+        [
+          [
+            "Signature Prawns Coconut",
+            32000,
+            "Prawns in rich coconut gravy with curry leaves."
+          ],
+          [
+            "Signature Claypot Kingfish",
+            31000,
+            "Kingfish, coconut milk, curry leaves & raw mango."
+          ],
+          [
+            "Kuku Paka",
+            26000,
+            "Grilled chicken in creamy tomato-coconut sauce."
+          ],
+          [
+            "Chicken Koroga",
+            26000,
+            "Slow-cooked chicken, onion, tomato & spinach."
+          ],
+          [
+            "Samaki Paka",
+            27000,
+            "Whole tilapia in spiced tomato-coconut sauce."
+          ],
+          [
+            "Options",
+            null,
+            "Choose a side: rice, chapati, fries, roasted potatoes or sautéed veg."
+          ]
+        ]
+      ],
+      [
+        "Platters - to share",
+        [
+          [
+            "Grill Master Platter",
+            109000,
+            "Grilled meats & sides, built for 2-3."
+          ],
+          [
+            "Seafood Platter",
+            130000,
+            "Premium ocean mix, dips & sides. 2-3."
+          ],
+          [
+            "Mini Seafood Platter",
+            55000,
+            "A smaller seafood plate for two."
+          ],
+          [
+            "Mixed Grill Platter",
+            75000,
+            "Assorted meats & seafood with sides."
+          ]
+        ]
+      ],
+      [
+        "Signature dishes & grills",
+        [
+          [
+            "Beef Tenderloin Steak",
+            49000,
+            "Tender fillet with onion red-wine sauce."
+          ],
+          [
+            "Pan-Seared Fish",
+            29000,
+            "Red snapper with a lemon-butter sauce."
+          ],
+          [
+            "Jambalaya",
+            26000,
+            "Creole rice with chicken, sausage & prawns."
+          ],
+          [
+            "Glazed Sweet Chilli Fish",
+            29000,
+            "Snapper in Thai sweet chilli over spinach."
+          ],
+          [
+            "Tilapia - Fried",
+            25000,
+            "Herb-marinated whole tilapia, citrus garnish."
+          ],
+          [
+            "Tilapia - Grilled",
+            26000,
+            "Herb-marinated whole tilapia, citrus garnish."
+          ],
+          [
+            "Swahili Fried Kuku",
+            25000,
+            "Half chicken in Swahili spices, fried crisp."
+          ],
+          [
+            "Lemon Grilled Chicken",
+            28000,
+            "Lemon, garlic & oregano marinated, grilled."
+          ],
+          [
+            "French Onion Chicken",
+            29000,
+            "Caramelised onion sauce & melted cheese."
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Pizza & sides",
+    "groups": [
+      [
+        "Pizza",
+        [
+          [
+            "Hug a Mug Feast",
+            26000,
+            "Chicken, sausage, pepperoni, olives & peppers."
+          ],
+          [
+            "Butter Chicken",
+            25000,
+            "Butter chicken, mozzarella & coriander."
+          ],
+          [
+            "Chicken Tikka",
+            24000,
+            "Tandoori chicken, onion, tomato & mint."
+          ],
+          [
+            "Margherita",
+            20000,
+            "Tomato, mozzarella & basil."
+          ],
+          [
+            "Garden Veg",
+            23000,
+            "Peppers, zucchini, onion & tomato."
+          ],
+          [
+            "Beef Pepperoni",
+            25000,
+            "Beef pepperoni, peppers, onion & tomato."
+          ],
+          [
+            "Options",
+            null,
+            "Add-ons: mozzarella 4,000 • chicken 5,000 • sausage 5,000 • pickles 3,000"
+          ]
+        ]
+      ],
+      [
+        "Sides",
+        [
+          [
+            "Tanzanian Rice",
+            8000,
+            ""
+          ],
+          [
+            "Ghee Rice",
+            14000,
+            ""
+          ],
+          [
+            "Swahili Chapati",
+            3000,
+            ""
+          ],
+          [
+            "Chapati - Gluten Free",
+            6000,
+            ""
+          ],
+          [
+            "Fries",
+            8000,
+            ""
+          ],
+          [
+            "Cheesy Fries",
+            12000,
+            ""
+          ],
+          [
+            "Masala Fries",
+            10000,
+            ""
+          ],
+          [
+            "Loaded Fries",
+            16000,
+            "Cheese & chicken or beef."
+          ],
+          [
+            "Garlic Bread",
+            2000,
+            ""
+          ],
+          [
+            "Mashed Potatoes",
+            12000,
+            ""
+          ],
+          [
+            "Roasted Potatoes",
+            10000,
+            ""
+          ],
+          [
+            "Potato Wedges",
+            8000,
+            ""
+          ],
+          [
+            "Cassava",
+            8000,
+            ""
+          ],
+          [
+            "Sautéed Vegetables",
+            10000,
+            ""
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Little bites, sweet endings",
+    "groups": [
+      [
+        "Kids' corner",
+        [
+          [
+            "Tender Chicken & Fries",
+            15000,
+            ""
+          ],
+          [
+            "Mac & Cheese",
+            14000,
+            ""
+          ],
+          [
+            "Kids Tomato Pasta",
+            15000,
+            ""
+          ],
+          [
+            "Mini Burger & Fries",
+            16000,
+            ""
+          ],
+          [
+            "Mini Margherita Pizza",
+            15000,
+            ""
+          ],
+          [
+            "Mini Chicken Pizza",
+            17000,
+            ""
+          ],
+          [
+            "Mini Beef Pepperoni Pizza",
+            17000,
+            ""
+          ],
+          [
+            "Mini Pancakes",
+            12000,
+            ""
+          ],
+          [
+            "Mini Waffles",
+            12000,
+            ""
+          ],
+          [
+            "Kids French Toast",
+            10000,
+            ""
+          ],
+          [
+            "Vanilla Ice Cream Scoop",
+            6000,
+            ""
+          ],
+          [
+            "Kids Brownie & Ice Cream",
+            9000,
+            ""
+          ]
+        ]
+      ],
+      [
+        "Desserts",
+        [
+          [
+            "Banana Toffee Pudding",
+            18000,
+            "Warm banana pudding with silky toffee."
+          ],
+          [
+            "Apple Cobbler",
+            15000,
+            "Spiced apples under a buttery crust. Pre-order."
+          ],
+          [
+            "Banana Split",
+            13000,
+            ""
+          ],
+          [
+            "Brownie",
+            8000,
+            "Warm fudgy goodness."
+          ],
+          [
+            "Fruit Salad",
+            10000,
+            ""
+          ],
+          [
+            "Fruit Salad & Ice Cream",
+            13000,
+            ""
+          ],
+          [
+            "Sundae - Fudge / Oreo / Trio",
+            15000,
+            ""
+          ]
+        ]
+      ],
+      [
+        "Ice cream",
+        [
+          [
+            "1 Scoop",
+            6000,
+            ""
+          ],
+          [
+            "2 Scoops",
+            8000,
+            ""
+          ],
+          [
+            "3 Scoops",
+            10000,
+            ""
+          ],
+          [
+            "Options",
+            null,
+            "Flavours: Vanilla, Strawberry & Chocolate. Add crushed nuts +2,000."
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Coffee & tea",
+    "groups": [
+      [
+        "Hot coffee",
+        [
+          [
+            "Cappuccino",
+            [
+              7000,
+              9000
+            ],
+            ""
+          ],
+          [
+            "Espresso",
+            [
+              4000,
+              6000
+            ],
+            ""
+          ],
+          [
+            "Caffè Latte",
+            9000,
+            ""
+          ],
+          [
+            "Mocha",
+            9000,
+            ""
+          ],
+          [
+            "Espresso Macchiato",
+            6000,
+            ""
+          ],
+          [
+            "Americano",
+            5000,
+            ""
+          ],
+          [
+            "Hot Chocolate",
+            10000,
+            "Dark, milk or white."
+          ],
+          [
+            "Turmeric Latte",
+            10000,
+            ""
+          ],
+          [
+            "Options",
+            null,
+            "Milk: low-fat +4,000 • soy/oat +5,000 • almond +6,000 • flavour +1,000 • cocoa free."
+          ]
+        ]
+      ],
+      [
+        "Hot teas",
+        [
+          [
+            "Black Tea Pot",
+            5000,
+            ""
+          ],
+          [
+            "Chai Dawa",
+            8000,
+            ""
+          ],
+          [
+            "White Tea Pot",
+            7000,
+            ""
+          ],
+          [
+            "Masala Tea Pot",
+            8000,
+            ""
+          ],
+          [
+            "Flavoured Tea",
+            5000,
+            "Hibiscus, lemon or rooibos."
+          ],
+          [
+            "Earl Grey",
+            6000,
+            ""
+          ],
+          [
+            "Green Tea",
+            6000,
+            ""
+          ]
+        ]
+      ],
+      [
+        "Iced coffee & teas",
+        [
+          [
+            "Iced Tea",
+            8000,
+            ""
+          ],
+          [
+            "Iced Americano",
+            8000,
+            ""
+          ],
+          [
+            "Iced Latte",
+            9000,
+            ""
+          ],
+          [
+            "Iced Coffee",
+            9000,
+            ""
+          ],
+          [
+            "Espresso Float",
+            9000,
+            ""
+          ],
+          [
+            "Vanilla Frappuccino",
+            13000,
+            ""
+          ],
+          [
+            "Caramel Frappuccino",
+            13000,
+            ""
+          ],
+          [
+            "Hazelnut Frappuccino",
+            13000,
+            ""
+          ],
+          [
+            "Mocha Frappuccino",
+            13000,
+            ""
+          ]
+        ]
+      ]
+    ]
+  },
+  {
+    "title": "Blended & refreshed",
+    "groups": [
+      [
+        "Smoothies",
+        [
+          [
+            "Go Nuts",
+            15000,
+            "Strawberry, banana, peanut butter & crushed nuts."
+          ],
+          [
+            "Sunshine Daydream",
+            13000,
+            "Strawberry, yoghurt & coconut water."
+          ],
+          [
+            "Strawberry Banana Bliss",
+            13000,
+            "Banana, strawberry, milk, yoghurt & honey."
+          ],
+          [
+            "Green Energy Booster",
+            13000,
+            "Banana, spinach, mango & milk."
+          ],
+          [
+            "Peanut Butter Powerhouse",
+            15000,
+            "Banana, peanut butter, chia & honey."
+          ],
+          [
+            "Creamy Mango Coconut",
+            13000,
+            "Mango, coconut milk, yoghurt & honey."
+          ],
+          [
+            "Pina Colada",
+            12000,
+            "Pineapple, banana & coconut milk."
+          ],
+          [
+            "Super Food",
+            15000,
+            "Build your own from our greens & fruits."
+          ],
+          [
+            "Tender Coconut",
+            12000,
+            "Coconut water & flesh with vanilla."
+          ]
+        ]
+      ],
+      [
+        "Milkshakes",
+        [
+          [
+            "Hug a Mug Shake",
+            14000,
+            "Vanilla, crushed nuts & peanut butter."
+          ],
+          [
+            "Vanilla",
+            11000,
+            ""
+          ],
+          [
+            "Banana",
+            12000,
+            ""
+          ],
+          [
+            "Mango",
+            13000,
+            ""
+          ],
+          [
+            "Tender Coconut",
+            13000,
+            ""
+          ],
+          [
+            "Nutella",
+            14000,
+            ""
+          ],
+          [
+            "Chocolate",
+            12000,
+            ""
+          ],
+          [
+            "Strawberry",
+            12000,
+            ""
+          ],
+          [
+            "Oreo",
+            13000,
+            ""
+          ],
+          [
+            "Kit-Kat",
+            14000,
+            ""
+          ],
+          [
+            "Very Berry",
+            14000,
+            ""
+          ]
+        ]
+      ],
+      [
+        "Juices",
+        [
+          [
+            "Watermelon-Beetroot-Lemon",
+            13000,
+            ""
+          ],
+          [
+            "Apple-Beetroot-Carrot",
+            13000,
+            ""
+          ],
+          [
+            "Apple & Ginger",
+            12000,
+            ""
+          ],
+          [
+            "Orange",
+            9000,
+            ""
+          ],
+          [
+            "Passion",
+            9000,
+            ""
+          ],
+          [
+            "Apple",
+            14000,
+            ""
+          ],
+          [
+            "Pineapple",
+            9000,
+            ""
+          ],
+          [
+            "Mango",
+            10000,
+            ""
+          ],
+          [
+            "Red Grape",
+            14000,
+            ""
+          ],
+          [
+            "2 Juice Combo",
+            10000,
+            ""
+          ],
+          [
+            "3 Juice Combo",
+            11000,
+            ""
+          ],
+          [
+            "Options",
+            null,
+            "Combos available: orange, pineapple, watermelon, passion & mango."
+          ]
+        ]
+      ]
+    ]
+  }
+]
