@@ -1,3 +1,5 @@
+// Source: https://hugamug.tz/menu.pdf, last modified 16 October 2026.
+// Tuple fields: name, TSh price(s), description, and optional house-signature flag.
 import menu from './menu.json';
 import {featured, signatures, money} from './dishes';
 import {photos} from './photos';
@@ -71,10 +73,11 @@ function renderMenu() {
       if (!matches.length) continue;
       const group = el('div','menu-group');
       group.append(el('h4','',label));
-      for (const [name, price, description] of matches) {
+      for (const [name, price, description, signature] of matches) {
         const article = el('article','menu-entry');
         article.append(el('h5','',name));
         if(price !== null) article.append(el('span','entry-price',(Array.isArray(price)?price:[price]).map(money).join(' / ')));
+        if(signature) article.append(el('small','house-signature','House signature'));
         if(description) article.append(el('p','',description));
         group.append(article);count++;
       }
@@ -109,12 +112,20 @@ let opener;
 function openMenu(button) {
   opener = mobileNav.contains(button) ? toggle : button;
   setNav(false);category = button.dataset.openMenu==='drinks'?6:-1;
-  search.value='';dialog.showModal();renderMenu();overlayChanged();$('#menuClose').focus();
+  search.value='';dialog.showModal();renderMenu();
+  tabs.children[category+1].scrollIntoView({block:'nearest',inline:'start',behavior:'instant'});
+  overlayChanged();$('#menuClose').focus();
 }
 $$('[data-open-menu]').forEach(button => button.onclick = () => openMenu(button));
 $('#menuClose').onclick = () => dialog.close();
 search.oninput = renderMenu;
 dialog.addEventListener('keydown',event => {
+  if (event.key === 'Tab') {
+    const first = $('#menuClose'), last = dialog.querySelector('.cloth-notice a');
+    if ((event.shiftKey && document.activeElement === first) || (!event.shiftKey && document.activeElement === last)) {
+      event.preventDefault(); (event.shiftKey ? last : first).focus();
+    }
+  }
   if (event.key==='Escape'){event.preventDefault();event.stopPropagation();dialog.close()}
 },true);
 dialog.onclose = () => {overlayChanged();opener?.focus({preventScroll:true})};
@@ -131,6 +142,10 @@ for (const [name,key] of photos) {
   if (['garden','veranda','evening','seafood'].includes(key)) img.src='/photos/'+key+'-small.webp';
   img.loading='lazy';button.setAttribute('aria-label','Enlarge '+name);button.append(img);figure.append(button);gallery.append(figure);
 }
+document.addEventListener('gallery-photo', event => {
+  const photo = photos[event.detail];
+  if (photo) { gallery.children[event.detail].querySelector('button').focus({preventScroll:true}); enlarge(...photo) }
+});
 $('#lightboxClose').onclick=()=>box.close();
 box.onclick=event=>{if(event.target===box)box.close()};
 box.onclose=overlayChanged;

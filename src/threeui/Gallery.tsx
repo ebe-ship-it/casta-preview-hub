@@ -71,6 +71,14 @@ export function Gallery({
     let documentVisible = !document.hidden;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    const ray = new THREE.Raycaster();
+    function pick(event: MouseEvent) {
+      const bounds = canvas!.getBoundingClientRect();
+      ray.setFromCamera(new THREE.Vector2((event.clientX - bounds.left) / bounds.width * 2 - 1, 1 - (event.clientY - bounds.top) / bounds.height * 2), camera);
+      const hit = ray.intersectObjects(gallery.children)[0];
+      if (hit) host!.dispatchEvent(new CustomEvent('gallery-photo', { bubbles: true, detail: hit.object.userData.photoIndex }));
+    }
+    canvas.addEventListener('click', pick);
     const textures = GALLERY_IMAGE_URLS.map((url) => {
       const texture = loader.load(url, () => {
         if (disposed) {
@@ -86,7 +94,7 @@ export function Gallery({
 
     const materials = Array.from({ length: 16 }, (_, index) => new THREE.MeshBasicMaterial({
       map: textures[index % textures.length],
-      opacity: 0.85,
+      opacity: 1,
       side: THREE.DoubleSide,
       toneMapped: false,
       transparent: true,
@@ -94,6 +102,7 @@ export function Gallery({
 
     materials.forEach((material, index) => {
       const panel = new THREE.Mesh(geometry, material);
+      panel.userData.photoIndex = index % textures.length;
       panel.position.y = (index - 8) * 2.4;
       panel.rotation.y = (index / 16) * Math.PI * 4;
       gallery.add(panel);
@@ -164,6 +173,7 @@ export function Gallery({
     start();
 
     return () => {
+      canvas.removeEventListener("click",pick);
       disposed = true;
       stop();
       resizeObserver.disconnect();

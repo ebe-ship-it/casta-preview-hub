@@ -276,7 +276,9 @@ import * as THREE from "three";
   }
 
   /* ------------------------------------------------------------- scene -- */
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  const context = canvas.getContext('webgl2', {antialias:true}) || canvas.getContext('webgl', {antialias:true});
+  if (!context) { window.frameElement?.dispatchEvent(new Event('effect-unavailable')); return; }
+  const renderer = new THREE.WebGLRenderer({ canvas, context, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.16;

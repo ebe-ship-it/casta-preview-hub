@@ -105,10 +105,11 @@ html,body{background:transparent;overflow:hidden}.stage{--h:48px;--bw:150px;--pa
   <div class="plate" aria-hidden="true"></div>
   <canvas id="fx"></canvas>
 
-  <a class="btn" id="btn" href="https://wa.me/255767644444?text=Hello%20Hug%20a%20Mug%2C%20may%20I%20reserve%20a%20table%3F" target="_blank" rel="noopener"><span class="lbl">Book a table ↗</span></a>
+  <a class="btn" id="btn" href="https://wa.me/255767644444?text=Hello%20Hug%20a%20Mug%2C%20may%20I%20reserve%20a%20table%3F" target="_blank" rel="noopener"><span class="lbl">Book a table</span></a>
 </div>
 
 <script type="module">
+if (window.frameElement) document.querySelector(".lbl").style.visibility = "hidden";
 /* =====================================================================
    Liquid metal — a dispersion shader.
 

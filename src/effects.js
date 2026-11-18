@@ -18,13 +18,32 @@ const motion = matchMedia('(prefers-reduced-motion: reduce)');
 export function observeEffect(host) {
   let visible = false, active = false, generation = 0, cleanup;
   const kind = host.dataset.scene || host.dataset.effect;
+  let requested = kind !== 'metal';
+  if (kind === 'metal') {
+    const request = () => { requested = true; sync() };
+    host.addEventListener('pointerenter',request,{once:true});
+    host.addEventListener('touchstart',request,{once:true,passive:true});
+    host.addEventListener('focusin',request,{once:true});
+    const scene = () => host.querySelector('iframe')?.contentWindow;
+    host.addEventListener('pointerenter',() => scene()?.__hover?.(true));
+    host.addEventListener('pointerleave',() => scene()?.__hover?.(false));
+    host.addEventListener('focusin',() => scene()?.__hover?.(true));
+    host.addEventListener('focusout',() => scene()?.__hover?.(false));
+    host.addEventListener('pointerdown',() => scene()?.__press?.(true));
+    for (const event of ['pointerup','pointercancel']) window.addEventListener(event,() => scene()?.__press?.(false));
+    host.addEventListener('pointermove',event => {
+      const child = scene(); if (!child?.__hover) return;
+      const bounds = host.getBoundingClientRect();
+      child.dispatchEvent(new PointerEvent('pointermove',{clientX:event.clientX-bounds.left,clientY:event.clientY-bounds.top,pointerType:event.pointerType}));
+    });
+  }
   const dialog = document.querySelector('#menuDialog');
   function stop() {
     active = false;
     generation++;
     cleanup?.();
     cleanup = null;
-    host.classList.remove('scene-active');
+    host.classList.remove('scene-active','metal-ready');
   }
   async function start() {
     active = true;
@@ -57,16 +76,22 @@ export function observeEffect(host) {
       } else {
         const frame = document.createElement('iframe');
         frame.title = titles[kind] || 'Decorative café animation';
-        if (!titles[kind] || kind === 'cloth') { frame.tabIndex = -1; frame.setAttribute('aria-hidden','true') }
+        if (!titles[kind] || kind === 'cloth' || kind === 'metal') { frame.tabIndex = -1; frame.setAttribute('aria-hidden','true') }
         frame.src = '/scenes/' + kind + '.html' + (host.dataset.category ? '?category=' + encodeURIComponent(host.dataset.category) : '');
+        frame.addEventListener('effect-unavailable',stop,{once:true});
         cleanup = () => frame.remove();
+        if (kind === 'metal') frame.onload = () => {
+          if (!current()) return;
+          host.classList.add('metal-ready');
+          frame.contentWindow.__hover?.(host.matches(':hover, :focus-within'));
+        };
         host.append(frame);
       }
       host.classList.add('scene-active');
     } catch (error) { stop(); console.warn('Café effect unavailable:',kind,error.message) }
   }
   function sync() {
-    const show = visible && !motion.matches && !document.hidden && (dialog.open === dialog.contains(host)) && !document.querySelector('#lightbox').open;
+    const show = requested && visible && !motion.matches && !document.hidden && (dialog.open === dialog.contains(host)) && !document.querySelector('#lightbox').open;
     if (show && !active) start();
     if (!show && active) stop();
   }
